@@ -12,9 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "@arco-design/web-vue": "^2.44.2",
-    "@vuepress/client": "2.0.0-beta.60",
-    "@vuepress/theme-default": "^1.9.9",
+    "@vuepress/client": "2.0.0-beta.61",
+    "@vuepress/plugin-theme-data": "2.0.0-beta.61",
+    "@vueuse/core": "^9.13.0",
     "vue": "^3.2.47",
-    "vuepress": "2.0.0-beta.60"
+    "vuepress": "2.0.0-beta.61"
   }
 }

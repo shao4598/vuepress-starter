@@ -14,7 +14,7 @@ export default {
     locales: {
       '/': {
         logo: '/images/hero.png',
-        sidebar
+        sidebar,
       }
     }
 
