@@ -1,8 +1,11 @@
 import { defaultTheme } from 'vuepress'
 import { sidebar } from './sidebar'
+import { shikiPlugin } from '@vuepress/plugin-shiki'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defineUserConfig } from '@vuepress/cli'
 
-export default {
-  base: '/ue',
+export default defineUserConfig({
+  base: '/ue/',
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -17,6 +20,17 @@ export default {
         sidebar,
       }
     }
-
   }),
-}
+  plugins: [
+    shikiPlugin({
+      theme: 'one-dark-pro',
+    })
+  ],
+  bundler: viteBundler({
+    viteOptions: {
+      ssr: {
+        noExternal: ['@arco-design/web-vue']
+      }
+    }
+  })
+})
