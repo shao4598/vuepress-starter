@@ -1,8 +1,8 @@
 # 文本域 Textarea
 
-字数统计
+字数统计。
 
-placeholder 默认显示“请输入内容”
+placeholder 默认显示“请输入内容”。
 
 <a-card>
   <a-textarea

@@ -1,6 +1,6 @@
 # 空状态 Empty
 
-自定义组件，需要“空状态”设计稿
+自定义组件，需要“空状态”设计稿。
 
 <div class="background">
   <icon-align-left class="icon-fold" />

@@ -1,6 +1,6 @@
 # 按钮 Button
 
-自定义按钮需要default hover click disable四种状态
+自定义按钮需要default hover click disable四种状态。
 
 <a-card>
   <a-space direction="vertical">

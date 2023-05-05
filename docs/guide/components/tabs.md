@@ -2,7 +2,7 @@
 
 ## 单层
 
-不设置type，使用默认的Line模式
+不设置type，使用默认的Line模式。
 
 <a-card>
   <a-tabs>
@@ -36,11 +36,11 @@
 
 ## 多层
 
-第一层Card模式
+第一层Card模式。
 
-第二层Line模式
+第二层Line模式。
 
-第三层Rounded模式
+第三层Rounded模式。
 
 <a-card>
   <a-tabs type="card">

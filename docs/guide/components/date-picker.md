@@ -38,6 +38,8 @@
   <a-space direction="vertical">
       <a-range-picker
         v-model="datetimeByDay"
+        :shortcuts="rangeShortcutsForDay"
+        shortcuts-position="right"
         style="width: 254px"
         value-format="YYYY-MM-DD HH:mm:ss"
       />
@@ -51,6 +53,8 @@
   <a-space direction="vertical">
       <a-range-picker
         v-model="datetimeByDay"
+        :shortcuts="rangeShortcuts"
+        shortcuts-position="right"
         style="width: 254px"
         value-format="YYYY-MM-DD HH:mm:ss"
       />
@@ -85,6 +89,41 @@ const saveDatetimeByDay = computed<string>(()=>{
   const [starttime, endtime] = datetimeByDay.value
   return `存储范围: ${starttime} ~ ${endtime}`
 })
+
+const rangeShortcuts = [
+  {
+    label: '过去2天',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(2, 'day'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去7天',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(7, 'day'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去1个月',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(1, 'month'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去6个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
+  },
+  {
+    label: '未来2天',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(2, 'day')],
+  },
+  {
+    label: '未来7天',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(7, 'day')],
+  },
+  {
+    label: '未来1个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(1, 'month')],
+  },
+  {
+    label: '未来6个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
+  }
+]
 </script>
 ```
 
@@ -103,7 +142,7 @@ const saveDatetimeByDay = computed<string>(()=>{
         format: 'HH:mm',
         defaultValue: '00:00:00'
       }"
-      :shortcuts="rangeShortcuts"
+      :shortcuts="rangeShortcutsForSecond"
       shortcuts-position="right"
       style="width: 380px"
     />
@@ -169,6 +208,22 @@ const rangeShortcuts = [
   {
     label: '过去6个月',
     value: () => [dayjs().hour(0).minute(0).second(0).subtract(6, 'month'), dayjs()],
+  },
+  {
+    label: '未来2天',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(2, 'day')],
+  },
+  {
+    label: '未来7天',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(7, 'day')],
+  },
+  {
+    label: '未来1个月',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(1, 'month')],
+  },
+  {
+    label: '未来6个月',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
   }
 ]
 </script>
@@ -219,7 +274,42 @@ const saveDatetimeBySecond = computed<string>(()=>{
   return `存储范围: ${starttime} ~ ${endtime}`
 })
 
-const rangeShortcuts = [
+const rangeShortcutsForDay = [
+  {
+    label: '过去2天',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(2, 'day'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去7天',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(7, 'day'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去1个月',
+    value: () => [dayjs().hour(0).minute(0).second(0).subtract(1, 'month'), dayjs().hour(0).minute(0).second(0)],
+  },
+  {
+    label: '过去6个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
+  },
+  {
+    label: '未来2天',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(2, 'day')],
+  },
+  {
+    label: '未来7天',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(7, 'day')],
+  },
+  {
+    label: '未来1个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(1, 'month')],
+  },
+  {
+    label: '未来6个月',
+    value: () => [dayjs().hour(0).minute(0).second(0), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
+  }
+]
+
+const rangeShortcutsForSecond = [
   {
     label: '过去2天',
     value: () => [dayjs().hour(0).minute(0).second(0).subtract(2, 'day'), dayjs()],
@@ -234,7 +324,23 @@ const rangeShortcuts = [
   },
   {
     label: '过去6个月',
-    value: () => [dayjs().hour(0).minute(0).second(0).subtract(6, 'month'), dayjs()],
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
+  },
+  {
+    label: '未来2天',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(2, 'day')],
+  },
+  {
+    label: '未来7天',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(7, 'day')],
+  },
+  {
+    label: '未来1个月',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(1, 'month')],
+  },
+  {
+    label: '未来6个月',
+    value: () => [dayjs(), dayjs().hour(0).minute(0).second(0).add(6, 'month')],
   }
 ]
 </script>
