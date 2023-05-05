@@ -2,7 +2,9 @@
 
 点击遮罩层不可以关闭抽屉
 
-<a-button type="primary" @click="onClick">点我打开抽屉</a-button>
+<a-card>
+  <a-button type="primary" @click="onClick">点我打开抽屉</a-button>
+</a-card>
 <a-drawer
   :mask-closable="false"
   title="时间轴"

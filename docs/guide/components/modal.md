@@ -10,7 +10,9 @@
 
 请求成功自动关闭对话框。请求失败保留对话框。
 
-<a-button type="primary" @click="onClick">点我打开对话框</a-button>
+<a-card>
+  <a-button type="primary" @click="onClick">点我打开对话框</a-button>
+</a-card>
 <a-modal
   title="拒绝接收"
   v-model:visible="visible"
@@ -102,7 +104,7 @@ function onClick(){
 </script>
 
 
-```vue{4,57-70}
+```vue{7-9,41,61,64,67}
 <template>
   <a-button type="primary" @click="onClick">点我打开对话框</a-button>
   <a-modal

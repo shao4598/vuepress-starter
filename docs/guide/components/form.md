@@ -6,31 +6,33 @@ Label 与组件上下布局。
 
 不使用回车提交表单。
 
-<a-form
-  ref="formRef"
-  layout="vertical"
-  :model="form"
-  :rules="rules"
->
-  <a-form-item
-    field="name"
-    label="用户名"
+<a-card>
+  <a-form
+    ref="formRef"
+    layout="vertical"
+    :model="formState"
+    :rules="rules"
   >
-    <a-input v-model="form.name" placeholder="请输入用户名" />
-  </a-form-item>
-  <a-form-item
-    field="age"
-    label="年龄"
-  >
-    <a-input-number v-model="form.age" placeholder="请输入年龄" />
-  </a-form-item>
-  <a-form-item>
-    <a-space>
-      <a-button @click="onSubmit">提交</a-button>
-      <a-button @click="$refs.formRef.resetFields()">重置</a-button>
-    </a-space>
-  </a-form-item>
-</a-form>
+    <a-form-item
+      field="name"
+      label="用户名"
+    >
+      <a-input v-model="formState.name" placeholder="请输入用户名" />
+    </a-form-item>
+    <a-form-item
+      field="age"
+      label="年龄"
+    >
+      <a-input-number v-model="formState.age" placeholder="请输入年龄" />
+    </a-form-item>
+    <a-form-item>
+      <a-space>
+        <a-button type="primary" @click="onSubmit">提交</a-button>
+        <a-button @click="$refs.formRef.resetFields()">重置</a-button>
+      </a-space>
+    </a-form-item>
+  </a-form>
+</a-card>
 
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
@@ -60,7 +62,7 @@ const rules = {
   ]
 }
 
-const form = reactive({
+const formState = reactive({
   name: '',
   age: undefined,
 });
@@ -76,24 +78,24 @@ async function onSubmit(){
   <a-form
     ref="formRef"
     layout="vertical"
-    :model="form"
+    :model="formState"
     :rules="rules"
   >
     <a-form-item
       field="name"
       label="用户名"
     >
-      <a-input v-model="form.name" placeholder="请输入用户名" />
+      <a-input v-model="formState.name" placeholder="请输入用户名" />
     </a-form-item>
     <a-form-item
       field="age"
       label="年龄"
     >
-      <a-input-number v-model="form.age" placeholder="请输入年龄" />
+      <a-input-number v-model="formState.age" placeholder="请输入年龄" />
     </a-form-item>
     <a-form-item>
       <a-space>
-        <a-button @click="onSubmit">提交</a-button>
+        <a-button type="primary" @click="onSubmit">提交</a-button>
         <a-button @click="$refs.formRef.resetFields()">重置</a-button>
       </a-space>
     </a-form-item>
@@ -129,7 +131,7 @@ const rules = {
   ]
 }
 
-const form = reactive({
+const formState = reactive({
   name: '',
   age: undefined,
 });
