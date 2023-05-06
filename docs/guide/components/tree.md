@@ -30,7 +30,6 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { IconPlus } from '@arco-design/web-vue/es/icon';
 
 const isCheckStrictly = ref(false)
 
@@ -101,15 +100,15 @@ const treeData = ref([{
                   "key": "230206"
               },
               {
-                  "title": "昂昂溪区",
+                  "title": "昂昂溪区分局",
                   "key": "230205"
               },
               {
-                  "title": "碾子山区",
+                  "title": "碾子山区分局",
                   "key": "230207"
               },
               {
-                  "title": "梅里斯达斡尔族区",
+                  "title": "梅里斯达斡尔族区分局",
                   "key": "230208"
               }
           ]
